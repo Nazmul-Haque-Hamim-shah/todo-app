@@ -4,7 +4,7 @@ from db import db,Tasks,User
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI']="postgresql://postgres:yQDdmbNzfoZWxJMsFRgwWabtNXsQROON@centerbeam.proxy.rlwy.net:46372/railway"
+app.config['SQLALCHEMY_DATABASE_URI']=DB_PASS
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
@@ -45,6 +45,7 @@ def delete(id):
     db.session.delete(task)
     db.session.commit()
     return redirect(url_for("index"))
+
 
 
 
